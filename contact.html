@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact &amp; Registration | Motherland Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="IMAGES/BADGE.png">
+</head>
+
+
+<body>
+    <header>
+        <div class="logo">Motherland <span>Academy</span></div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <!-- Staff Contact Section -->
+        <aside class="staff-info">
+            <h2>School Contacts</h2>
+            <div class="contact-card">
+                <h3>Office of the Headteacher (HM)</h3>
+                <p><strong style="color:rgba(255,255,255,0.9)">📞Phone:</strong> [+256 772 438974](tel:+256772438974)</p>
+                <p><strong style="color:rgba(255,255,255,0.9)">📞Secondary Line:</strong> [+256 705 865950](tel:+256705865950)</p>
+                <p><strong style="color:rgba(255,255,255,0.9)">✉ Email:</strong> admin@molanacademy.ac.ug</p>
+                <p><strong>📍Location:</strong> Nabweru, Kampala, Uganda</p>
+            </div>
+            <hr>
+            <p><em>"At Motherland, we set the pace and others follow."</em></p>
+        </aside>
+
+        <!-- Registration Form Section -->
+        <section class="registration-form">
+            <h2>New Student Registration</h2>
+            <form id="regForm" onsubmit="return validateSubmission(event)">
+                <div class="form-group">
+                    <label for="pName">Parent/Guardian Name:</label>
+                    <input type="text" id="pName" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sName">Student Full Name:</label>
+                    <input type="text" id="sName" placeholder="Enter student's name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="class">Class Entering:</label>
+                    <select id="class">
+                        <option value="s1">Senior One</option>
+                        <option value="s2">Senior Two</option>
+                        <option value="s3">Senior Three</option>
+                        <option value="s4">Senior Four</option>
+                        <option value="s5">Senior Five</option>
+                        <option value="s6">Senior Six</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Parent Comments/Requirements:</label>
+                    <textarea id="comments" rows="4" placeholder="Any special needs or questions?"></textarea>
+                </div>
+
+                <!-- Digital Signature Area -->
+                <div class="form-group">
+                    <label>Digital Signature:</label>
+                    <canvas id="signature-pad" width="400" height="150"></canvas>
+                    <button type="button" class="btn-clear" onclick="clearSignature()">Clear Signature</button>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; justify-content: center; font-size: 1rem; padding: 0.9rem;">Register Student</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 <span>Motherland Academy Nabweru</span>. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

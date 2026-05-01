@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Motherland Academy Nabweru</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="IMAGES/BADGE.png">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Motherland <span>Academy</span></div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gallery-section">
+        <h1>School Life in Action</h1>
+        <p>Experience the vibrant environment of Motherland Academy Nabweru.</p>
+
+        <!-- 1. AUTOPLAY VIDEO (Minimal Space) -->
+        <div class="video-box">
+            <video id="schoolVideo" autoplay muted loop playsinline>
+                <source src="IMAGES/MOTHERLAND.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <button class="video-btn" id="soundButton" onclick="toggleSound()">🔊 Unmute Video</button>
+
+        <!-- 2. AUTOMATIC IMAGE SLIDESHOW -->
+        <h2>Campus Highlights</h2>
+        
+        <div class="slideshow-container">
+            <div class="slides-wrapper" id="slider">
+                <div class="slide-item"><img src="IMAGES/SMILE.png " alt="Students at Motherland Academy."></div>
+                <div class="slide-item"><img src="IMAGES/FOOTBALL.png " alt="Football Activity"></div>
+                <div class="slide-item"><img src="IMAGES/STUDENTS.png" alt="Students learning."></div>
+                <div class="slide-item"><img src="IMAGES/ADVERT.png" alt="Laboratory"></div>
+                <div class="slide-item"><img src="IMAGES/COOKING.png " alt="Cookery class."></div>
+                <div class="slide-item"><img src="IMAGES/SPORTS.png " alt="Sports day."></div>
+                <div class="slide-item"><img src="IMAGES/MEASUREMENTS.png " alt="Science measurements"></div>
+                <div class="slide-item"><img src="IMAGES/DANCE.png" alt="Music, Dance and Drama"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 <span>Motherland Academy Nabweru</span>. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Video Sound Toggle
+        function toggleSound() {
+            const video = document.getElementById('schoolVideo');
+            const btn = document.getElementById('soundButton');
+            if (video.muted) {
+                video.muted = false;
+                btn.innerHTML = "🔈 Mute Sound";
+            } else {
+                video.muted = true;
+                btn.innerHTML = "🔊 Unmute Video";
+            }
+        }
+
+        // Automatic Slideshow Logic
+        let currentSlide = 0;
+        const slider = document.getElementById('slider');
+        const totalSlides = document.querySelectorAll('.slide-item').length;
+
+        function autoPlaySlides() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        setInterval(autoPlaySlides, 3500); // Changes every 3.5 seconds
+    </script>
+</body>
+</html>
